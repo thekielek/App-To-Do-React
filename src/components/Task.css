@@ -1,0 +1,9 @@
+.task {
+  margin: 20px auto;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  background-color: var(--silverColor);
+  padding: 20px;
+  border-radius: 10px;
+}

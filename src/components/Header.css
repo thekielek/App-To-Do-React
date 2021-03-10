@@ -1,0 +1,10 @@
+.header {
+  width: 100%;
+}
+
+.header__title {
+  padding-top: 50px;
+  text-align: center;
+  color: var(--purpleColor);
+  text-transform: uppercase;
+}
