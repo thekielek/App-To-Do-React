@@ -18,6 +18,7 @@ export const CreateTask = ({ todos, setTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!value) return;
     addTask();
     setValue("");
   };
