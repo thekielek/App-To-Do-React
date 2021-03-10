@@ -10,7 +10,7 @@ export function App() {
   return (
     <div className="App">
       <Header />
-      <CreateTask setTodo={setTodo} />
+      <CreateTask todos={todos} setTodo={setTodo} />
       <section className="tasks">
         {todos.map((todo) => (
           <Task todo={todo} key={todo.id} />
