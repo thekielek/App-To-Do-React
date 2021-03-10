@@ -35,6 +35,7 @@ export const CreateTask = ({ todos, setTodo }) => {
       <input
         className="form__addInput"
         type="text"
+        value={value}
         onChange={(e) => setValue(e.target.value)}
       />
       <input
