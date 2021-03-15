@@ -7,13 +7,33 @@ import { Task } from "./components/Task";
 export function App() {
   const [todos, setTodo] = useState([]);
 
+  const handleRemove = (index) => {
+    const newTasks = [...todos];
+    newTasks.splice(index, 1);
+    setTodo(newTasks);
+  };
+
+  const handleCompleted = (index) => {
+    const newTasks = [...todos];
+    newTasks[index].completed = true;
+    setTodo(newTasks);
+    console.log(newTasks[index]);
+  };
+
   return (
     <div className="App">
       <Header />
       <CreateTask todos={todos} setTodo={setTodo} />
       <section className="tasks">
-        {todos.map((todo) => (
-          <Task todo={todo} key={todo.id} />
+        {todos.map((todo, index) => (
+          <Task
+            todo={todo}
+            todos={todos}
+            index={index}
+            key={index}
+            handleRemove={handleRemove}
+            handleCompleted={handleCompleted}
+          />
         ))}
       </section>
     </div>

@@ -8,3 +8,43 @@
   padding: 20px;
   border-radius: 10px;
 }
+
+.task__date {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.task__date,
+.task__title {
+  line-height: 30px;
+  font-size: 16px;
+  color: var(--blackColor);
+}
+
+.button__container {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: flex-end;
+}
+
+.button__container--remove {
+  margin-right: 15px;
+}
+
+.button__container--remove,
+.button__container--completed {
+  width: 35%;
+  border-radius: 10px;
+  height: 30px;
+  background-color: var(--purpleColor);
+  color: white;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.button__container--remove:hover,
+.button__container--completed:hover {
+  background-color: var(--hoverColor);
+}

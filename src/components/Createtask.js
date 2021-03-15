@@ -8,7 +8,6 @@ export const CreateTask = ({ todos, setTodo }) => {
     const newTasks = [
       ...todos,
       {
-        id: todos.length + 1,
         text: value,
         completed: false,
       },
