@@ -17,7 +17,6 @@ export function App() {
     const newTasks = [...todos];
     newTasks[index].completed = true;
     setTodo(newTasks);
-    console.log(newTasks[index]);
   };
 
   return (
