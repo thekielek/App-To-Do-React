@@ -23,7 +23,13 @@ export const CreateTask = ({ todos, setTodo }) => {
     setValue("");
   };
 
-  console.log(searchValue);
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value);
+    const newTasks = todos.filter((todo) => {
+      return todo.text.toLowerCase().includes(searchValue.toLowerCase());
+    });
+    setTodo(newTasks);
+  };
 
   return (
     <form className="form">
@@ -34,7 +40,7 @@ export const CreateTask = ({ todos, setTodo }) => {
         className="form__searchInput"
         type="text"
         value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
+        onChange={handleSearch}
       />
       <label className="form__addLabel" htmlFor="addTask">
         Wpisz nowe zadanie
