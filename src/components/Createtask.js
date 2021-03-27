@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Createtask.css";
 
 export const CreateTask = ({ todos, setTodo }) => {
@@ -25,11 +25,14 @@ export const CreateTask = ({ todos, setTodo }) => {
 
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
-    const newTasks = todos.filter((todo) => {
-      return todo.text.toLowerCase().includes(searchValue.toLowerCase());
-    });
-    setTodo(newTasks);
   };
+
+  useEffect(() => {
+    const newTasks = todos.filter((todo) =>
+      todo.text.toLowerCase().includes(searchValue)
+    );
+    setTodo(newTasks);
+  }, [searchValue]);
 
   return (
     <form className="form">
