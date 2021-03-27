@@ -32,7 +32,7 @@ export const CreateTask = ({ todos, setTodo }) => {
       todo.text.toLowerCase().includes(searchValue)
     );
     setTodo(newTasks);
-  }, [searchValue]);
+  }, [searchValue, setTodo]);
 
   return (
     <form className="form">

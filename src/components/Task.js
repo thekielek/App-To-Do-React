@@ -12,7 +12,10 @@ export const Task = ({ todo, handleRemove, handleCompleted, index }) => {
         {todo.text}
       </p>
       <div className="button__container">
-        <button className="button__container--remove" onClick={handleRemove}>
+        <button
+          className="button__container--remove"
+          onClick={() => handleRemove(index)}
+        >
           Usuń
         </button>
         <button

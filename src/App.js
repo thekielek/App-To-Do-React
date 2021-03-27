@@ -27,9 +27,8 @@ export function App() {
         {todos.map((todo, index) => (
           <Task
             todo={todo}
-            todos={todos}
-            index={index}
             key={index}
+            index={index}
             handleRemove={handleRemove}
             handleCompleted={handleCompleted}
           />
