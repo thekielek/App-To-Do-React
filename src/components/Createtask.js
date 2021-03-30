@@ -25,14 +25,16 @@ export const CreateTask = ({ todos, setTodo }) => {
 
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
+    const filtredTasks = todos.filter((todo) =>
+      todo.text.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setTodo(filtredTasks);
+    console.log(filtredTasks);
   };
 
   useEffect(() => {
-    const newTasks = todos.filter((todo) =>
-      todo.text.toLowerCase().includes(searchValue)
-    );
-    setTodo(newTasks);
-  }, [searchValue, setTodo]);
+    localStorage.setItem("myTodosInLocalStorage", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <form className="form">
