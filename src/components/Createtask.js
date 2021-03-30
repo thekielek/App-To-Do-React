@@ -32,10 +32,6 @@ export const CreateTask = ({ todos, setTodo }) => {
     console.log(filtredTasks);
   };
 
-  useEffect(() => {
-    localStorage.setItem("myTodosInLocalStorage", JSON.stringify(todos));
-  }, [todos]);
-
   return (
     <form className="form">
       <label className="form__searchLabel" htmlFor="searchTask">
