@@ -24,10 +24,16 @@
   height: 50px;
   border-radius: 10px;
 }
-
-.form__button {
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.buttons__item {
   width: 20%;
   margin-top: 10px;
+  margin-right: 30px;
+
   border-radius: 10px;
   height: 60px;
   background-color: var(--purpleColor);

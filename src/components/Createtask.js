@@ -23,6 +23,12 @@ export const CreateTask = ({ todos, setTodo }) => {
     setValue("");
   };
 
+  const handleCompletedTasks = (e) => {
+    e.preventDefault();
+    const completedTasks = todos.filter((todo) => todo.completed === true);
+    setTodo(completedTasks);
+  };
+
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
     const filtredTasks = todos.filter((todo) =>
@@ -52,12 +58,20 @@ export const CreateTask = ({ todos, setTodo }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <input
-        className="form__button"
-        type="submit"
-        value="Dodaj zadanie"
-        onClick={handleSubmit}
-      />
+      <div className="buttons">
+        <input
+          className="buttons__item"
+          type="submit"
+          value="Dodaj zadanie"
+          onClick={handleSubmit}
+        />
+        <input
+          className="buttons__item"
+          type="submit"
+          value="Pokaż ukończone"
+          onClick={handleCompletedTasks}
+        />
+      </div>
     </form>
   );
 };
